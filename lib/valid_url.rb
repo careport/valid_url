@@ -23,7 +23,7 @@ module ActiveModel
       def validate_url(record, attribute, value)
         begin
           url = ensure_protocol(value)
-          uri = Addressable::URI.parse(url)
+          uri = URI.parse(url)
         rescue
           invalid = true
         end
